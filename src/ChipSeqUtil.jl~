@@ -1,0 +1,4 @@
+module ChipSeqUtil
+
+include("ReferenceContigs.jl")
+end
