@@ -1,8 +1,6 @@
 using DataFrames
 export load_narrowpeak, metadata
 
-metadata = readtable(joinpath(Pkg.dir("ChipSeqUtil"), "src", "metadata.csv"))
-
 function load_narrowpeak(stream, contigs, index; binSize=1000, loadp=true, mlogt=false, verbose=0)
     numBins = ceil(Int64, sum(contigs.sizes) / binSize)
     chrOffsets = Dict{String,Int64}()
@@ -43,3 +41,5 @@ function load_narrowpeak(stream, contigs, index; binSize=1000, loadp=true, mlogt
     close(stream)
     binValues, pValues
 end
+
+metadata = readtable(joinpath(Pkg.dir("ChipSeqUtil"), "src", "metadata.csv"));
