@@ -1,5 +1,5 @@
-export load_narrowpeak, metadata
 using DataFrames
+export load_narrowpeak, metadata
 
 metadata = readtable(joinpath(Pkg.dir("ChipSeqUtil"), "metadata.csv"))
 
