@@ -2,7 +2,7 @@ export ReferenceContigs, ReferenceContigs_hg38
 
 type ReferenceContigs
     count::Int64
-    names::Array{ASCIIString}
+    names::Array{String}
     sizes::Array{Int64}
     offsets::Array{Int64}
     
