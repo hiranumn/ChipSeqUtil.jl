@@ -1,4 +1,7 @@
-export load_narrowpeak
+export load_narrowpeak, metadata
+using DataFrames
+
+metadata = readtable(joinpath(Pkg.dir("MyPkg"), "metadata.csv"))
 
 function load_narrowpeak(stream, contigs, index; binSize=1000, loadp=true, mlogt=false, verbose=0)
     numBins = ceil(Int64, sum(contigs.sizes) / binSize)
